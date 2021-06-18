@@ -7,7 +7,7 @@
         <th>Orbit Type</th>
         <th>Launch Date</th>
     </tr>
-    <tr *ngFor="let satellite of satellites">
+    <tr [class.rowStyle]="rowCountStyle(rowCount)" *ngFor="let satellite of satellites; let rowCount = index">
         <td>{{satellite.name}}</td>
         <td [class.warning]="satellite.shouldShowWarning()">{{satellite.type}}</td> 
         <!--Why do I have to use "satellite.shouldShowWarning()" instead of just "shouldShowWarning()"-->
